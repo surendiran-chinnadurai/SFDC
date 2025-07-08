@@ -3,6 +3,8 @@ package automations;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 import GeneralUtilities.baseClass;
@@ -16,11 +18,13 @@ public class RenewalsCaseClosure extends baseClass{
 	
 	@Test
 	public void renewalsCaseClosure() throws EncryptedDocumentException, IOException, InterruptedException {
-		
+			
 		cp=new casesPage(driver);
 		sr=new searchResults(driver);
 		ce=new caseEdit(driver);
 		cc=new closeCase(driver);
+//		ChromeOptions option=new ChromeOptions();
+//		option.addArguments("--headless=new");
 		
 		int NoOfRow=fUtil.getNumberOfRow("Sheet1");
 		System.out.println(NoOfRow);
@@ -31,7 +35,7 @@ public class RenewalsCaseClosure extends baseClass{
 		cp.getSearch_btn().submit();
 		sr.getEdit_link().click();
 		ce.getDate_sent_customerLink().click();
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		try {
 			ce.getSave_close_btn().click();
 			cc.getStatus_DropDown("Closed");
@@ -44,4 +48,5 @@ public class RenewalsCaseClosure extends baseClass{
 		
 		}	
 	}
+	
 }

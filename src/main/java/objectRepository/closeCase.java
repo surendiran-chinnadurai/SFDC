@@ -6,7 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class closeCase {
+import GeneralUtilities.SeleniumUtilites;
+import GeneralUtilities.baseClass;
+
+public class closeCase extends baseClass{
+	
+	
 	
 	public closeCase(WebDriver driver) {
 		PageFactory.initElements(driver, this);

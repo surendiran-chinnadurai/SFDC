@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 public class fileUtilities {
 	
 	public String readCaseNumberFromExcel(String Sname,int r,int c) throws EncryptedDocumentException, IOException {
-		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\eclipse-workspace\\SFDCProject\\TestData\\CaseNumber.xlsx");
+		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\git\\SFDC\\TestData\\CaseNumber.xlsx");
 		Workbook wb=WorkbookFactory.create(fs);
 		Sheet sheetname=wb.getSheet(Sname);
 		Row row=sheetname.getRow(r);
@@ -27,14 +27,14 @@ public class fileUtilities {
 		return caseNumber;
 	}
 	public int getNumberOfRow(String Sname) throws EncryptedDocumentException, IOException {
-		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\eclipse-workspace\\SFDCProject\\TestData\\CaseNumber.xlsx");
+		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\git\\SFDC\\TestData\\CaseNumber.xlsx");
 		Workbook wb=WorkbookFactory.create(fs);
 		Sheet sheetname=wb.getSheet(Sname);
 		int TotalNumberOfRows=sheetname.getPhysicalNumberOfRows();
 		return TotalNumberOfRows;
 	}
 	public void WriteDateInExcel(String Sname,int r,int c) throws EncryptedDocumentException, IOException {
-		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\eclipse-workspace\\SFDCProject\\TestData\\CaseNumber.xlsx");
+		FileInputStream fs=new FileInputStream("C:\\Users\\chinnsur\\git\\SFDC\\TestData\\CaseNumber.xlsx");
 		Workbook wb=WorkbookFactory.create(fs);
 		Sheet sheetname=wb.getSheet(Sname);
 		Row row=sheetname.getRow(r);
@@ -48,7 +48,7 @@ public class fileUtilities {
 		Row row=sheet.createRow(rownum);
 		Cell cell=row.createCell(cellnum);
 		cell.setCellValue(data);
-		FileOutputStream fis=new FileOutputStream("C:\\Users\\chinnsur\\OneDrive - Hewlett Packard Enterprise\\case details\\test.xlsx");
+		FileOutputStream fis=new FileOutputStream("C:\\Users\\chinnsur\\git\\SFDC\\TestData\\CaseNumber.xlsx");
 		wb.write(fis);
 		wb.close();
 		fis.close();
